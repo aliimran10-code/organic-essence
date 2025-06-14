@@ -75,7 +75,18 @@
         </div>
     </div>
 
-
+<!-- Popup Modal HTML -->
+<div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+  <div style="background:#fff; padding:30px; border-radius:8px; text-align:center; min-width:250px;">
+    <p>we are donaiting our 10% income for Ghaza people. !</p>
+    <button onclick="document.getElementById('popup').style.display='none'">Close</button>
+  </div>
+</div>
+<script>
+  window.onload = function() {
+    document.getElementById('popup').style.display = 'flex';
+  }
+</script>
 
     <!---------- Product Section-------------->
     <div class="product-tag">
