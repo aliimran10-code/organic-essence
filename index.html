@@ -76,10 +76,57 @@
     </div>
 
 <!-- Popup Modal HTML -->
-<div id="popup" style="display:none; position:fixed; top:0; left:0; width:200%; height:200%; background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
-  <div style="background:#fff; padding:60px; border-radius:10px; text-align:center; min-width:450px;">
-    <p>we are donaiting our 10% income for Ghaza people. !</p>
-    <button onclick="document.getElementById('popup').style.display='none'">Close</button>
+<style>
+  #popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #popup .popup-content {
+    background: #fff;
+    padding: 36px 28px 28px 28px;
+    border-radius: 16px;
+    text-align: center;
+    min-width: 320px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.16);
+    font-family: 'Lato', Arial, sans-serif;
+    position: relative;
+    animation: popin 0.5s;
+  }
+  #popup .popup-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #222;
+    font-weight: 500;
+  }
+  #popup .close-btn {
+    background: #009966;
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    padding: 8px 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #popup .close-btn:hover {
+    background: #00704a;
+  }
+  @keyframes popin {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+</style>
+<div id="popup">
+  <div class="popup-content">
+    <p>We are donating 10% of our income for Ghaza people.</p>
+    <button class="close-btn" onclick="document.getElementById('popup').style.display='none'">Close</button>
   </div>
 </div>
 <script>
