@@ -66,11 +66,11 @@
         height: 200px !important;
     }
 
-    .logo img{width: 60% !important;}
+    .logo img{width: 40% !important;}
     #para{font-size: 14px!important }
     .banner-text{margin-left: 0px !important;}
     .container-fluid{ 
-        background-blend-mode:darken;
+        background-blend-mode:full dark;
         height: 90vh !important;
         background: rgba(0, 0, 0, 0.411) url(./images/bg2.jpg);
      }
