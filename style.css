@@ -307,7 +307,7 @@
     height: 200vh;
     /* background-color: ##18142a; */
     background-image: url(./images/bg2.jpg);
-    background-position: 60% !important;
+    background-position: 40% !important;
     background-size:cover;
     background-repeat: none;
     display: flex;
