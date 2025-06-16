@@ -307,8 +307,8 @@
     height: 200vh;
     /* background-color: ##18142a; */
     background-image: url(./images/bg2.jpg);
-    background-position: center!important;
-    background-size:60%;
+    background-position: 40%!important;
+    background-size:center;
     background-repeat: none;
     display: flex;
     justify-content: flex-end;
