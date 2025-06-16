@@ -796,4 +796,11 @@ font-weight: 500}
         font-size: 17px;
     }
 
-    
+  @media screen and (max-width: 600px) {
+  .banner-text {
+    background: rgba(255,255,255,0.90);  /* White background with slight transparency */
+    border-radius: 12px;
+    padding: 16px;
+    margin: 10px 0;
+  }
+}  
