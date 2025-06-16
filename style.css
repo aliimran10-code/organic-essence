@@ -333,7 +333,7 @@
 .banner-text #h2-1{
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    color :#1a1a1a;
+    color : #222 !important;
 }
 .banner-text #Organio{
     font-family: "Dancing Script", cursive;
@@ -796,11 +796,4 @@ font-weight: 500}
         font-size: 17px;
     }
 
-  @media screen and (max-width: 600px) {
-  .banner-text {
-    background: rgba(255,255,255,0.90);  /* White background with slight transparency */
-    border-radius: 12px;
-    padding: 16px;
-    margin: 10px 0;
-  }
-}  
+
