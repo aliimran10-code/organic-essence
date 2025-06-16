@@ -308,8 +308,8 @@
     /* background-color: ##673ab7; */
     background-image: url(./images/bg2.jpg);
     background-position: center!important;
-    background-size:contain;
-    background-repeat: no-repeat;
+    background-size:cover;
+    background-repeat: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
