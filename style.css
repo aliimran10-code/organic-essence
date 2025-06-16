@@ -309,7 +309,7 @@
     background-image: url(./images/bg2.jpg);
     background-position: center!important;
     background-size:80%;
-    background-repeat: none;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: flex-end;
     align-items: center;
