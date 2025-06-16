@@ -324,9 +324,9 @@
 }
 .banner-text{
     width: 20%;
-    margin-left: 70px;
+    margin-left: 50px;
     height: auto;
-    /* border: 1px solid white; */
+    /* border: 1px solid black; */
     /* display: flex;
     flex-direction: column !important; */
 }
