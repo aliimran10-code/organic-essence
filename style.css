@@ -305,9 +305,9 @@
     margin-top: 60px;
     width: 100%;
     height: 200vh;
-    /* background-color: #673ab7; */
+    /* background-color: ##18142a; */
     background-image: url(./images/bg2.jpg);
-    background-position: center !important;
+    background-position: 60% !important;
     background-size:cover;
     background-repeat: none;
     display: flex;
