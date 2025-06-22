@@ -260,10 +260,16 @@
     <h3>Place Your Order</h3>
     <form id="orderForm">
       <div style="margin-bottom:16px;">
+        <input type="text" id="name" name="name" placeholder="Enter your name" required style="width:90%; padding:8px;"/><br><br>
         <input type="text" id="address" name="address" placeholder="Enter your address" required style="width:90%; padding:8px;"/>
       </div>
       <div style="margin-bottom:16px;">
         <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required style="width:90%; padding:8px;"/>
+          <!-- COD checkbox -->
+<label>
+  <input type="checkbox" id="cod" name="cod"/>
+  Cash on Delivery (COD)
+</label>
       </div>
       <button type="submit" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">Place Order</button>
       <button type="button" onclick="closeOrderPopup()" style="margin-left:12px; background:#ccc; color:#222; border:none; border-radius:6px; padding:8px 24px;">Cancel</button>
