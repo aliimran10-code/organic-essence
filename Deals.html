@@ -254,6 +254,56 @@
                     <div class="cnt">
   <a href="Checkout.html">
     <i class= aria-hidden="true"></i>Add to Cart
+      <!-- Order Popup Modal -->
+<div id="orderPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; justify-content:center; align-items:center;">
+  <div style="background:#fff; padding:32px 24px; border-radius:12px; min-width:300px; text-align:center; position:relative;">
+    <h3>Place Your Order</h3>
+    <form id="orderForm">
+      <div style="margin-bottom:16px;">
+        <input type="text" id="address" name="address" placeholder="Enter your address" required style="width:90%; padding:8px;"/>
+      </div>
+      <div style="margin-bottom:16px;">
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required style="width:90%; padding:8px;"/>
+      </div>
+      <button type="submit" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">Place Order</button>
+      <button type="button" onclick="closeOrderPopup()" style="margin-left:12px; background:#ccc; color:#222; border:none; border-radius:6px; padding:8px 24px;">Cancel</button>
+    </form>
+    <div id="orderSuccess" style="display:none; color:green; margin-top:12px;">Order placed successfully!</div>
+  </div>
+</div><script>
+  // Function to open the order popup
+  function openOrderPopup() {
+    document.getElementById('orderPopup').style.display = 'flex';
+    document.getElementById('orderSuccess').style.display = 'none';
+    document.getElementById('orderForm').reset();
+  }
+
+  // Function to close the order popup
+  function closeOrderPopup() {
+    document.getElementById('orderPopup').style.display = 'none';
+  }
+
+  // Handle the form submission
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('orderForm').onsubmit = function(e) {
+      e.preventDefault();
+      // Here you can add AJAX to send data to your backend if needed
+      document.getElementById('orderSuccess').style.display = 'block';
+      setTimeout(closeOrderPopup, 2000); // Close after 2 seconds
+    };
+  });
+
+  // Attach popup open to all "Add to Cart" links/buttons
+  document.addEventListener('DOMContentLoaded', function() {
+    var addToCartLinks = document.querySelectorAll('a[href*="Checkout.html"], a[href*="Checkout.html"]');
+    addToCartLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        openOrderPopup();
+      });
+    });
+  });
+</script>
   </a>
 </div>
                     <b class="line"></b>
