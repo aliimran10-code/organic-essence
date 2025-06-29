@@ -20,27 +20,70 @@
 </head>
 
 <body>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
+     <!-- Order Popup Modal -->
+ }
+    };
+  });
+            <script type="module">
+  // Import Firebase SDKs
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
-  // Your web app's Firebase configuration
+  // Your Firebase config (update to match your project if needed)
   const firebaseConfig = {
-    apiKey: "AIzaSyBGIHC0l56BXuQvoJq8CBm5r6oayK_mUrg",
-    authDomain: "organic-essence.firebaseapp.com",
-    databaseURL: "https://organic-essence-default-rtdb.firebaseio.com",
-    projectId: "organic-essence",
-    storageBucket: "organic-essence.firebasestorage.app",
-    messagingSenderId: "169585269019",
-    appId: "1:169585269019:web:5e3039bd2112e0dfd9dbbe"
+    apiKey: "AIzaSyAJecx551iEtJG1GITG1HBwBLV1kkQ0n9o",
+    authDomain: "contact-form-b95e2.firebaseapp.com",
+    databaseURL: "https://contact-form-b95e2-default-rtdb.firebaseio.com",
+    projectId: "contact-form-b95e2",
+    storageBucket: "contact-form-b95e2.firebasestorage.app",
+    messagingSenderId: "871599159296",
+    appId: "1:871599159296:web:af595bf15b543f0457c0e5",
+    measurementId: "G-4Q826GEJ55"
   };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-</script>
- 
+  const database = getDatabase(app);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Attach handler to all Add to Cart links
+    var addToCartLinks = document.querySelectorAll('a[href*="Checkout.html"]');
+    addToCartLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('orderPopup').style.display = 'flex';
+        document.getElementById('orderSuccess').style.display = 'none';
+        document.getElementById('orderForm').reset();
+      });
+    });
+
+    // Close popup handler
+    window.closeOrderPopup = function() {
+      document.getElementById('orderPopup').style.display = 'none';
+    };
+
+    // Handle order form submission
+    document.getElementById('orderForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const mobile = document.getElementById('mobile').value;
+      const cod = document.getElementById('cod').checked;
+      try {
+        const orderId = 'order_' + Date.now();
+        await set(ref(database, 'orders/' + orderId), {
+          name,
+          address,
+          mobile,
+          cod
+        });
+        document.getElementById('orderSuccess').style.display = 'block';
+        setTimeout(window.closeOrderPopup, 2000);
+      } catch (error) {
+        alert("Failed to place order: " + error.message);
+      }
+    };
+  }); 
     <div class="hdr">
         <header class="header">
 
@@ -219,68 +262,5 @@
                     <b class="line"></b>
                 </div>
             </div>
-      <!-- Order Popup Modal -->
- }
-    };
-  });
-            <script type="module">
-  // Import Firebase SDKs
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+     
 
-  // Your Firebase config (update to match your project if needed)
-  const firebaseConfig = {
-    apiKey: "AIzaSyAJecx551iEtJG1GITG1HBwBLV1kkQ0n9o",
-    authDomain: "contact-form-b95e2.firebaseapp.com",
-    databaseURL: "https://contact-form-b95e2-default-rtdb.firebaseio.com",
-    projectId: "contact-form-b95e2",
-    storageBucket: "contact-form-b95e2.firebasestorage.app",
-    messagingSenderId: "871599159296",
-    appId: "1:871599159296:web:af595bf15b543f0457c0e5",
-    measurementId: "G-4Q826GEJ55"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Attach handler to all Add to Cart links
-    var addToCartLinks = document.querySelectorAll('a[href*="Checkout.html"]');
-    addToCartLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('orderPopup').style.display = 'flex';
-        document.getElementById('orderSuccess').style.display = 'none';
-        document.getElementById('orderForm').reset();
-      });
-    });
-
-    // Close popup handler
-    window.closeOrderPopup = function() {
-      document.getElementById('orderPopup').style.display = 'none';
-    };
-
-    // Handle order form submission
-    document.getElementById('orderForm').onsubmit = async function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const address = document.getElementById('address').value;
-      const mobile = document.getElementById('mobile').value;
-      const cod = document.getElementById('cod').checked;
-      try {
-        const orderId = 'order_' + Date.now();
-        await set(ref(database, 'orders/' + orderId), {
-          name,
-          address,
-          mobile,
-          cod
-        });
-        document.getElementById('orderSuccess').style.display = 'block';
-        setTimeout(window.closeOrderPopup, 2000);
-      } catch (error) {
-        alert("Failed to place order: " + error.message);
-      }
-    };
-  });
-</script>
