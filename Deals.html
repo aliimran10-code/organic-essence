@@ -315,11 +315,12 @@
   document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('orderForm').onsubmit = function(e) {
       e.preventDefault();
-      //<script type="module">
+      <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js";
   import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
+  // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyAJecx551iEtJG1GITG1HBwBLV1kkQ0n9o",
     authDomain: "contact-form-b95e2.firebaseapp.com",
@@ -336,13 +337,53 @@
   const analytics = getAnalytics(app);
   const database = getDatabase(app);
 
-  // Example: Function to write a message (customize as needed)
-  function writeMessage(messageId, username, message) {
-    set(ref(database, 'messages/' + messageId), {
-      username: username,
-      message: message
+  // Open and close popup functions (if not already present)
+  window.openOrderPopup = function() {
+    document.getElementById('orderPopup').style.display = 'flex';
+    document.getElementById('orderSuccess').style.display = 'none';
+    document.getElementById('orderForm').reset();
+  };
+  window.closeOrderPopup = function() {
+    document.getElementById('orderPopup').style.display = 'none';
+  };
+
+  // Attach popup open to all "Add to Cart" links/buttons
+  document.addEventListener('DOMContentLoaded', function() {
+    var addToCartLinks = document.querySelectorAll('a[href*="Checkout.html"], a[href*="Checkout.html"]');
+    addToCartLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        openOrderPopup();
+      });
     });
-  }
+  });
+
+  // Handle the form submission and save order to Firebase
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('orderForm').onsubmit = async function(e) {
+      e.preventDefault();
+      // Get form values
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const mobile = document.getElementById('mobile').value;
+      const cod = document.getElementById('cod').checked;
+
+      // Save to Firebase
+      try {
+        const orderId = 'order_' + Date.now();
+        await set(ref(database, 'orders/' + orderId), {
+          name,
+          address,
+          mobile,
+          cod
+        });
+        document.getElementById('orderSuccess').style.display = 'block';
+        setTimeout(closeOrderPopup, 2000); // Close after 2 seconds
+      } catch (error) {
+        alert("Failed to place order: " + error.message);
+      }
+    };
+  });
 </script>
       document.getElementById('orderSuccess').style.display = 'block';
       setTimeout(closeOrderPopup, 2000); // Close after 2 seconds
