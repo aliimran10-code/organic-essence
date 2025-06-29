@@ -171,16 +171,7 @@
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    // Attach handler to all Add to Cart links
-    var addToCartLinks = document.querySelectorAll('a[href*="Checkout.html"]');
-    addToCartLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('orderPopup').style.display = 'flex';
-        document.getElementById('orderSuccess').style.display = 'none';
-        document.getElementById('orderForm').reset();
-      });
+       });
     });
 
     // Close popup handler
