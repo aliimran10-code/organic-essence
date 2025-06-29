@@ -41,32 +41,7 @@
     <div id="orderSuccess" style="display:none; color:green; margin-top:12px;">Order placed successfully!</div>
   </div>
 </div><script>
-  // Function to open the order popup
-  function openOrderPopup() {
-    document.getElementById('orderPopup').style.display = 'flex';
-    document.getElementById('orderSuccess').style.display = 'none';
-    document.getElementById('orderForm').reset();
-  }
-
-  // Function to close the order popup
-  function closeOrderPopup() {
-    document.getElementById('orderPopup').style.display = 'none';
-  }
-
-  // Handle the form submission
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('orderForm').onsubmit = function(e) {
-      e.preventDefault();
-     
-  // Open and close popup functions (if not already present)
-  window.openOrderPopup = function() {
-    document.getElementById('orderPopup').style.display = 'flex';
-    document.getElementById('orderSuccess').style.display = 'none';
-    document.getElementById('orderForm').reset();
-  };
-  window.closeOrderPopup = function() {
-    document.getElementById('orderPopup').style.display = 'none';
-  };
+ 
 
   // Attach popup open to all "Add to Cart" links/buttons
   document.addEventListener('DOMContentLoaded', function() {
