@@ -18,7 +18,8 @@
     <title>Organic Essence</title>
     <!-- <style></style> -->
 </head>
- <!-- Order Popup Modal -->
+<body>
+    <!-- Order Popup Modal -->
 <div id="orderPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; justify-content:center; align-items:center;">
   <div style="background:#fff; padding:32px 24px; border-radius:12px; min-width:300px; text-align:center; position:relative;">
     <h3>Place Your Order</h3>
@@ -39,8 +40,7 @@
       <button type="button" onclick="closeOrderPopup()" style="margin-left:12px; background:#ccc; color:#222; border:none; border-radius:6px; padding:8px 24px;">Cancel</button>
     </form>
     <div id="orderSuccess" style="display:none; color:green; margin-top:12px;">Order placed successfully!</div>
-  </div>
-    <button onclick="openOrderPopup">Add to Cart</button>
+     <button onclick="openOrderPopup()">Add to Cart</button>
     
 <!-- Modal JavaScript -->
 <script>
