@@ -46,6 +46,7 @@
         <div style="background:#fff; padding:32px 24px; border-radius:12px; min-width:300px; text-align:center; position:relative;">
             <h3>Place Your Order</h3>
             <form id="orderForm">
+                <input type="hidden" id="orderItem" name="orderItem" />
                 <div style="margin-bottom:16px;">
                     <input type="text" id="name" name="name" placeholder="Enter your name" required style="width:90%; padding:8px;" /><br><br>
                     <input type="text" id="address" name="address" placeholder="Enter your address" required style="width:90%; padding:8px;" />
@@ -71,16 +72,16 @@
             <!-- Product 1 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/GFront.jpg" alt="Orgyano Green">
+                    <img src="./images/GFront.jpg" alt="Orgyano Green">
                 </div>
                 <div class="img-info">
                     <h3>Orgyano Green</h3>
                     <span>200ml</span>
                     <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
+                        <button type="button" onclick="openOrderPopup('Orgyano Green 200ml')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <h4>PKR 450.00</h4>
                     <b class="line"></b>
                 </div>
@@ -88,16 +89,16 @@
             <!-- Product 2 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/YFront.jpg" alt="Orgyano Gold">
+                    <img src="./images/YFront.jpg" alt="Orgyano Gold">
                 </div>
                 <div class="img-info">
                     <h3>Orgyano Gold</h3>
                     <span>200ml</span>
-                   <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
+                    <div class="cnt">
+                        <button type="button" onclick="openOrderPopup('Orgyano Gold 200ml')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <h4>PKR 480.00</h4>
                     <b class="line"></b>
                 </div>
@@ -105,35 +106,35 @@
             <!-- Product 3 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/Green Refiller.jpg" alt="Orgyano Green Refiller">
+                    <img src="./images/Green Refiller.jpg" alt="Orgyano Green Refiller">
                 </div>
                 <div class="img-info">
                     <h3>Orgyano Green</h3>
                     <span>(Refiller pack)</span>
                     <span>1000ml</span>
+                    <div class="cnt">
+                        <button type="button" onclick="openOrderPopup('Orgyano Green Refiller 1000ml')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <h4>PKR 1400.00</h4>
-                   <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
                     <b class="line"></b>
                 </div>
             </div>
             <!-- Product 4 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/Gold Refiller.jpg" alt="Orgyano Gold Refiller">
+                    <img src="./images/Gold Refiller.jpg" alt="Orgyano Gold Refiller">
                 </div>
                 <div class="img-info">
                     <h3>Orgyano Gold</h3>
                     <span>(Refiller pack)</span>
                     <span>1000ml</span>
                     <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
+                        <button type="button" onclick="openOrderPopup('Orgyano Gold Refiller 1000ml')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <h4>PKR 1450.00</h4>
                     <b class="line"></b>
                 </div>
@@ -152,56 +153,56 @@
             <!-- Deal 1 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/D1.png" alt="Deal 1">
+                    <img src="./images/D1.png" alt="Deal 1">
                 </div>
                 <div class="img-info">
                     <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
+                        <button type="button" onclick="openOrderPopup('Deal 1')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <b class="line"></b>
                 </div>
             </div>
             <!-- Deal 2 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/D2.png" alt="Deal 2">
+                    <img src="./images/D2.png" alt="Deal 2">
                 </div>
                 <div class="img-info">
                     <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
+                        <button type="button" onclick="openOrderPopup('Deal 2')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <b class="line"></b>
                 </div>
             </div>
             <!-- Deal 3 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/D3.png" alt="Deal 3">
+                    <img src="./images/D3.png" alt="Deal 3">
                 </div>
                 <div class="img-info">
                     <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
+                        <button type="button" onclick="openOrderPopup('Deal 3')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <b class="line"></b>
                 </div>
             </div>
             <!-- Deal 4 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/D4.png" alt="Deal 4">
+                    <img src="./images/D4.png" alt="Deal 4">
                 </div>
                 <div class="img-info">
                     <div class="cnt">
-  <button type="button" onclick="openOrderPopup()" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
-    Add to Cart
-  </button>
-</div>
+                        <button type="button" onclick="openOrderPopup('Deal 4')" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">
+                            Add to Cart
+                        </button>
+                    </div>
                     <b class="line"></b>
                 </div>
             </div>
@@ -209,53 +210,56 @@
     </div>
 
     <!-- Firebase App (the core Firebase SDK) -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<!-- Firebase Realtime Database -->
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-<script>
-  // Your Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAJecx551iEtJG1GITG1HBwBLV1kkQ0n9o",
-    authDomain: "contact-form-b95e2.firebaseapp.com",
-    databaseURL: "https://contact-form-b95e2-default-rtdb.firebaseio.com",
-    projectId: "contact-form-b95e2",
-    storageBucket: "contact-form-b95e2.firebasestorage.app",
-    messagingSenderId: "871599159296",
-    appId: "1:871599159296:web:af595bf15b543f0457c0e5",
-    measurementId: "G-4Q826GEJ55"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+      // Your Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAJecx551iEtJG1GITG1HBwBLV1kkQ0n9o",
+        authDomain: "contact-form-b95e2.firebaseapp.com",
+        databaseURL: "https://contact-form-b95e2-default-rtdb.firebaseio.com",
+        projectId: "contact-form-b95e2",
+        storageBucket: "contact-form-b95e2.firebasestorage.app",
+        messagingSenderId: "871599159296",
+        appId: "1:871599159296:web:af595bf15b543f0457c0e5",
+        measurementId: "G-4Q826GEJ55"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
 
-  // Form handling and saving order to Firebase
-  function openOrderPopup() {
-      document.getElementById('orderPopup').style.display = 'flex';
-  }
-  function closeOrderPopup() {
-      document.getElementById('orderPopup').style.display = 'none';
-      document.getElementById('orderForm').reset();
-      document.getElementById('orderSuccess').style.display = 'none';
-  }
-  document.getElementById('orderForm').onsubmit = function(e) {
-      e.preventDefault();
-      var name = document.getElementById('name').value;
-      var address = document.getElementById('address').value;
-      var mobile = document.getElementById('mobile').value;
-      var cod = document.getElementById('cod').checked;
+      // Open popup and set product/deal name
+      function openOrderPopup(itemName) {
+          document.getElementById('orderPopup').style.display = 'flex';
+          document.getElementById('orderItem').value = itemName || '';
+      }
+      function closeOrderPopup() {
+          document.getElementById('orderPopup').style.display = 'none';
+          document.getElementById('orderForm').reset();
+          document.getElementById('orderSuccess').style.display = 'none';
+      }
+      document.getElementById('orderForm').onsubmit = function(e) {
+          e.preventDefault();
+          var name = document.getElementById('name').value;
+          var address = document.getElementById('address').value;
+          var mobile = document.getElementById('mobile').value;
+          var cod = document.getElementById('cod').checked;
+          var orderItem = document.getElementById('orderItem').value;
 
-      // Save order to Firebase
-      firebase.database().ref('orders').push({
-          name: name,
-          address: address,
-          mobile: mobile,
-          cod: cod
-      }).then(function() {
-          document.getElementById('orderSuccess').style.display = 'block';
-          setTimeout(closeOrderPopup, 1500);
-      }).catch(function(error) {
-          alert("Order failed: " + error.message);
-      });
-  };
-</script>
+          // Save order to Firebase with order details
+          firebase.database().ref('orders').push({
+              name: name,
+              address: address,
+              mobile: mobile,
+              cod: cod,
+              orderItem: orderItem
+          }).then(function() {
+              document.getElementById('orderSuccess').style.display = 'block';
+              setTimeout(closeOrderPopup, 1500);
+          }).catch(function(error) {
+              alert("Order failed: " + error.message);
+          });
+      };
+    </script>
 </body>
 </html>
