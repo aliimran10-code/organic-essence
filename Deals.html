@@ -208,24 +208,54 @@
         </div>
     </div>
 
-    <!-- Modal JavaScript -->
-    <script>
-        function openOrderPopup() {
-            document.getElementById('orderPopup').style.display = 'flex';
-        }
-        function closeOrderPopup() {
-            document.getElementById('orderPopup').style.display = 'none';
-            // Optionally reset form and success message
-            document.getElementById('orderForm').reset();
-            document.getElementById('orderSuccess').style.display = 'none';
-        }
-        // Handle form submission
-        document.getElementById('orderForm').onsubmit = function(e) {
-            e.preventDefault();
-            document.getElementById('orderSuccess').style.display = 'block';
-            // Optionally close after a delay
-            setTimeout(closeOrderPopup, 1500);
-        };
-    </script>
+    <!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<!-- Firebase Realtime Database -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script>
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAJecx551iEtJG1GITG1HBwBLV1kkQ0n9o",
+    authDomain: "contact-form-b95e2.firebaseapp.com",
+    databaseURL: "https://contact-form-b95e2-default-rtdb.firebaseio.com",
+    projectId: "contact-form-b95e2",
+    storageBucket: "contact-form-b95e2.firebasestorage.app",
+    messagingSenderId: "871599159296",
+    appId: "1:871599159296:web:af595bf15b543f0457c0e5",
+    measurementId: "G-4Q826GEJ55"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Form handling and saving order to Firebase
+  function openOrderPopup() {
+      document.getElementById('orderPopup').style.display = 'flex';
+  }
+  function closeOrderPopup() {
+      document.getElementById('orderPopup').style.display = 'none';
+      document.getElementById('orderForm').reset();
+      document.getElementById('orderSuccess').style.display = 'none';
+  }
+  document.getElementById('orderForm').onsubmit = function(e) {
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      var address = document.getElementById('address').value;
+      var mobile = document.getElementById('mobile').value;
+      var cod = document.getElementById('cod').checked;
+
+      // Save order to Firebase
+      firebase.database().ref('orders').push({
+          name: name,
+          address: address,
+          mobile: mobile,
+          cod: cod
+      }).then(function() {
+          document.getElementById('orderSuccess').style.display = 'block';
+          setTimeout(closeOrderPopup, 1500);
+      }).catch(function(error) {
+          alert("Order failed: " + error.message);
+      });
+  };
+</script>
 </body>
 </html>
