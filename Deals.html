@@ -40,7 +40,28 @@
     </form>
     <div id="orderSuccess" style="display:none; color:green; margin-top:12px;">Order placed successfully!</div>
   </div>
-</div><script>
+    <button onclick="openOrderPopup()">Add to Cart</button>
+    
+<!-- Modal JavaScript -->
+<script>
+function openOrderPopup() {
+  document.getElementById('orderPopup').style.display = 'flex';
+}
+function closeOrderPopup() {
+  document.getElementById('orderPopup').style.display = 'none';
+  // Optionally reset form and success message
+  document.getElementById('orderForm').reset();
+  document.getElementById('orderSuccess').style.display = 'none';
+}
+
+// Handle form submission
+document.getElementById('orderForm').onsubmit = function(e) {
+  e.preventDefault();
+  document.getElementById('orderSuccess').style.display = 'block';
+  // Optionally close after a delay
+  setTimeout(closeOrderPopup, 1500);
+};
+</script>
  
 
     <div class="hdr">
