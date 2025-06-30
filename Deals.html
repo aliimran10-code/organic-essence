@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,223 +9,192 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/0a2e3f66d0.js" crossorigin="anonymous"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./images/logoPNG.png" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <title>Organic Essence</title>
-    <!-- <style></style> -->
 </head>
-<div class="hdr">
 <body>
+    <div class="hdr">
         <header class="header">
-
             <div class="nav-items logo-nav">
-                <!----------- LOGO ------------>
+                <!-- LOGO -->
                 <div class="nav-in-items logo">
-                    <img src="./images/logoPNG.png">
+                    <img src="./images/logoPNG.png" alt="Logo">
                 </div>
             </div>
-
-             <!-- Vertical Navigation Bar -->
-                <nav style="margin-left: 20px;">
+            <!-- Vertical Navigation Bar -->
+            <nav style="margin-left: 20px;">
                 <ul style="list-style: none; padding: 0;">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About.html">About us</a></li>
-                <li><a href="Products.html">Products</a></li>
-                <li><a href="Deals.html">Deals</a></li>
-                
-            </div>
-            </div>
-<!---------- Product Section-------------->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About us</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Deals.html">Deals</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Product Section -->
     <div class="product-tag">
-        <span id="product-h2">
-          "Products & Deals"
-        </span>
-        <span id="product-info">
-            
-        </span>
+        <span id="product-h2">Products & Deals</span>
+        <span id="product-info"></span>
     </div>
 
     <!-- Order Popup Modal -->
-<div id="orderPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; justify-content:center; align-items:center;">
-  <div style="background:#fff; padding:32px 24px; border-radius:12px; min-width:300px; text-align:center; position:relative;">
-    <h3>Place Your Order</h3>
-    <form id="orderForm">
-      <div style="margin-bottom:16px;">
-        <input type="text" id="name" name="name" placeholder="Enter your name" required style="width:90%; padding:8px;"/><br><br>
-        <input type="text" id="address" name="address" placeholder="Enter your address" required style="width:90%; padding:8px;"/>
-      </div>
-      <div style="margin-bottom:16px;">
-        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required style="width:90%; padding:8px;"/>
-          <!-- COD checkbox -->
-<label>
-  <input type="checkbox" id="cod" name="cod"/>
-  Cash on Delivery (COD)
-</label>
-      </div>
-      <button type="submit" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">Place Order</button>
-      <button type="button" onclick="closeOrderPopup()" style="margin-left:12px; background:#ccc; color:#222; border:none; border-radius:6px; padding:8px 24px;">Cancel</button>
-    </form>
-    <div id="orderSuccess" style="display:none; color:green; margin-top:12px;">Order placed successfully!</div>
-     <button onclick="openOrderPopup()">Add to Cart</button>
-    
-<!-- Modal JavaScript -->
-<script>
-function openOrderPopup() {
-  document.getElementById('orderPopup').style.display = 'flex';
-}
-function closeOrderPopup() {
-  document.getElementById('orderPopup').style.display = 'none';
-  // Optionally reset form and success message
-  document.getElementById('orderForm').reset();
-  document.getElementById('orderSuccess').style.display = 'none';
-}
+    <div id="orderPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; justify-content:center; align-items:center;">
+        <div style="background:#fff; padding:32px 24px; border-radius:12px; min-width:300px; text-align:center; position:relative;">
+            <h3>Place Your Order</h3>
+            <form id="orderForm">
+                <div style="margin-bottom:16px;">
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required style="width:90%; padding:8px;" /><br><br>
+                    <input type="text" id="address" name="address" placeholder="Enter your address" required style="width:90%; padding:8px;" />
+                </div>
+                <div style="margin-bottom:16px;">
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required style="width:90%; padding:8px;" />
+                    <!-- COD checkbox -->
+                    <label>
+                        <input type="checkbox" id="cod" name="cod" />
+                        Cash on Delivery (COD)
+                    </label>
+                </div>
+                <button type="submit" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">Place Order</button>
+                <button type="button" onclick="closeOrderPopup()" style="margin-left:12px; background:#ccc; color:#222; border:none; border-radius:6px; padding:8px 24px;">Cancel</button>
+            </form>
+            <div id="orderSuccess" style="display:none; color:green; margin-top:12px;">Order placed successfully!</div>
+            <button onclick="openOrderPopup()">Add to Cart</button>
+        </div>
+    </div>
 
-// Handle form submission
-document.getElementById('orderForm').onsubmit = function(e) {
-  e.preventDefault();
-  document.getElementById('orderSuccess').style.display = 'block';
-  // Optionally close after a delay
-  setTimeout(closeOrderPopup, 1500);
-};
-</script>
-    
-    <!-------------Products---------------------->
-
+    <!-- Products -->
     <div class="container cont-2">
         <div class="row row-second">
+            <!-- Product 1 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <!-- <img id="img2" src="/images/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/GFront.jpg" alt="">
-                </div> 
+                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/GFront.jpg" alt="Orgyano Green">
+                </div>
                 <div class="img-info">
                     <h3>Orgyano Green</h3>
-                    <span>200ml </span>
-                     <!-- <span id="contact-now">Add to Cart</span> -->
-                     <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
+                    <span>200ml</span>
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
                     <h4>PKR 450.00</h4>
                     <b class="line"></b>
-                    
-                 </div>
+                </div>
             </div>
-            <div class="col-md-6  col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
+            <!-- Product 2 -->
+            <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <!-- <img id="img2" src="/images/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/YFront.jpg" alt="">
+                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/YFront.jpg" alt="Orgyano Gold">
                 </div>
                 <div class="img-info">
                     <h3>Orgyano Gold</h3>
-                    <span>200ml </span>
-                     <!-- <span id="contact-now">Add to Cart</span> -->
-                    <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
+                    <span>200ml</span>
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
                     <h4>PKR 480.00</h4>
                     <b class="line"></b>
-                   
                 </div>
             </div>
-          <div class="container cont-2">
-        <div class="row row-second">
+            <!-- Product 3 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <!-- <img id="img2" src="/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/Green Refiller.jpg" alt="">
-                </div> 
+                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/Green Refiller.jpg" alt="Orgyano Green Refiller">
+                </div>
                 <div class="img-info">
-                    <h3>Orgyano Green </h3>
-                    <span>(Refiller pack) <span>
-                    <span>1000ml </span>
-                    <h4>PKR 1400.00</h4> 
-                         <!-- <span id="contact-now">Add to Cart</span> -->
-                    <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
+                    <h3>Orgyano Green</h3>
+                    <span>(Refiller pack)</span>
+                    <span>1000ml</span>
+                    <h4>PKR 1400.00</h4>
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
                     <b class="line"></b>
                 </div>
             </div>
-         <div class="col-md-6  col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
+            <!-- Product 4 -->
+            <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <!-- <img id="img2" src="/images/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/Gold Refiller.jpg" alt="">
+                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/Gold Refiller.jpg" alt="Orgyano Gold Refiller">
                 </div>
                 <div class="img-info">
-                    <h3>Orgyano Gold </h3>
-                    <span>(Refiller pack) <span> 
-                    <span>1000ml </span>
-                         <!-- <span id="contact-now">Add to Cart</span> -->
-                    <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
-                    <h4>PKR 1450.00</h4>     
+                    <h3>Orgyano Gold</h3>
+                    <span>(Refiller pack)</span>
+                    <span>1000ml</span>
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
+                    <h4>PKR 1450.00</h4>
                     <b class="line"></b>
-          </div>
-     </div>
-               <!---------- Deals Section-------------->
-    <div class="product-tag">
-        <span id="product-h2">
-           <b>Deals<b>
-        </span>
-        <span id="product-info">
-            
-        </span>
+                </div>
+            </div>
+        </div>
     </div>
-                <!-------------Deals---------------------->
+
+    <!-- Deals Section -->
+    <div class="product-tag">
+        <span id="product-h2"><b>Deals</b></span>
+        <span id="product-info"></span>
+    </div>
 
     <div class="container cont-2">
         <div class="row row-second">
+            <!-- Deal 1 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <!-- <img id="img2" src="/images/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/D1.png" alt="">
-                </div> 
+                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/D1.png" alt="Deal 1">
+                </div>
                 <div class="img-info">
-                     <!-- <span id="contact-now">Add to Cart</span> -->
-                    <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
                     <b class="line"></b>
-                    
-                 </div>
-            </div>
-            <div class="col-md-6  col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
-                <div class="img-shampoo">
-                    <!-- <img id="img2" src="/images/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/D2.png" alt="">
-                </div>
-                <div class="img-info">
-                     <!-- <span id="contact-now">Add to Cart</span> -->
-                    <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
-                   <b class="line"></b>
-                   
                 </div>
             </div>
-          <div class="container cont-2">
-        <div class="row row-second">
+            <!-- Deal 2 -->
             <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <!-- <img id="img2" src="/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/D3.png" alt="">
-                </div> 
+                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/D2.png" alt="Deal 2">
+                </div>
                 <div class="img-info">
-                     <!-- <span id="contact-now">Add to Cart</span> -->
-                    <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
                     <b class="line"></b>
                 </div>
             </div>
-         <div class="col-md-6  col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
+            <!-- Deal 3 -->
+            <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
                 <div class="img-shampoo">
-                    <!-- <img id="img2" src="/images/greenBack.png" alt=""> -->
-                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/D4.png" alt="">
+                    <img onmouseover="imgCM()" onmouseout="imgOT()" id="img1" src="./images/D3.png" alt="Deal 3">
                 </div>
-                 <div class="img-info">
-                     <!-- <span id="contact-now">Add to Cart</span> -->
-                    <div class="cnt"><a href="Checkout.html"><i class=
-                                aria-hidden="true"></i>Add to Cart</a></div>
+                <div class="img-info">
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
                     <b class="line"></b>
                 </div>
             </div>
-     
+            <!-- Deal 4 -->
+            <div class="col-md-6 col-lg-4 col-xl-4 col-xxl-4 col-12 products1">
+                <div class="img-shampoo">
+                    <img onmouseover="imgCM2()" onmouseout="imgOT2()" id="img2" src="./images/D4.png" alt="Deal 4">
+                </div>
+                <div class="img-info">
+                    <div class="cnt"><a href="Checkout.html"><i aria-hidden="true"></i>Add to Cart</a></div>
+                    <b class="line"></b>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal JavaScript -->
+    <script>
+        function openOrderPopup() {
+            document.getElementById('orderPopup').style.display = 'flex';
+        }
+        function closeOrderPopup() {
+            document.getElementById('orderPopup').style.display = 'none';
+            // Optionally reset form and success message
+            document.getElementById('orderForm').reset();
+            document.getElementById('orderSuccess').style.display = 'none';
+        }
+        // Handle form submission
+        document.getElementById('orderForm').onsubmit = function(e) {
+            e.preventDefault();
+            document.getElementById('orderSuccess').style.display = 'block';
+            // Optionally close after a delay
+            setTimeout(closeOrderPopup, 1500);
+        };
+    </script>
+</body>
+</html>
