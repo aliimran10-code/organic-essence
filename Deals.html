@@ -196,5 +196,27 @@
             setTimeout(closeOrderPopup, 1500);
         };
     </script>
+ <!-- Order Popup Modal -->
+<div id="orderPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:2000; justify-content:center; align-items:center;">
+  <div style="background:#fff; padding:32px 24px; border-radius:12px; min-width:300px; text-align:center; position:relative;">
+    <h3>Place Your Order</h3>
+    <form id="orderForm">
+      <div style="margin-bottom:16px;">
+        <input type="text" id="name" name="name" placeholder="Enter your name" required style="width:90%; padding:8px;"/><br><br>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required style="width:90%; padding:8px;"/>
+      </div>
+      <div style="margin-bottom:16px;">
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required style="width:90%; padding:8px;"/>
+          <!-- COD checkbox -->
+<label>
+  <input type="checkbox" id="cod" name="cod"/>
+  Cash on Delivery (COD)
+</label>
+      </div>
+      <button type="submit" style="background:#009966; color:#fff; border:none; border-radius:6px; padding:8px 24px;">Place Order</button>
+      <button type="button" onclick="closeOrderPopup()" style="margin-left:12px; background:#ccc; color:#222; border:none; border-radius:6px; padding:8px 24px;">Cancel</button>
+    </form>
+    <div id="orderSuccess" style="display:none; color:green; margin-top:12px;">Order placed successfully!</div>
+     <button onclick="openOrderPopup()">Add to Cart</button>
 </body>
 </html>
